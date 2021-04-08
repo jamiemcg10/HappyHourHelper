@@ -1,0 +1,52 @@
+
+.container {
+    padding: 40px 0px;
+}
+
+img {
+    width: 250px;
+    margin: 20px 0px 50px 0px;
+}
+
+#instructions {
+    margin-top: 45px;
+
+    & ~ p {
+        width: 66%;
+        font-size: x-large;
+    }
+}
+
+li {
+    font-size: x-large;
+}
+
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 2.25rem;
+        text-align: center;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    li {
+        font-size: medium;
+    }
+
+    #instructions {
+        margin-top: 30px;
+    
+        & ~ p {
+            width: 80%;
+            font-size: medium;
+        }
+    }
+
+    h4, ul, p {
+        margin-left: 20px;
+    }
+}

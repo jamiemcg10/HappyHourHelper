@@ -1,0 +1,46 @@
+@import '../variables.scss';
+
+.active {
+    background-color: $hhh-medium-green;
+    color: white;
+}
+   
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+}
+
+.loaded-component {
+    padding: 155px 0px 35px 0px;
+    
+}
+
+.nav {
+    height: 55px;
+}
+
+.nav-link {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+#surprise-tab {
+    transition: background-color .1s ease-in-out;
+  }
+  
+#surprise-tab:active { // make tab flash when clicked 
+    background-color: $hhh-medium-green;
+}
+
+ul {
+    border-bottom: 1px solid lightgray;
+}
+
+
+
+@media screen and (max-width: 800px) { 
+    .nav-link {
+        font-size: large;
+    }
+}

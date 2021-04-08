@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+@import './variables.scss';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+
+.alert {
+    cursor: pointer;
+}
+.card {
+    border-top: none;
+}
+
+.collabsibleBox:nth-child(1) {
+    margin-top: 45px;
+}
+
+.collabsibleBox {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.link {
+    color: green;
+    text-decoration: underline;
+    list-style: none;
+    font-size: x-large;
+    width: fit-content;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.nav {
+    flex-wrap: initial;
+}
+
+.nav-item {
+    background-color: $hhh-inactive;
+}
+
+.nav-item:nth-child(2) {
+    border-color: lightgray;
+    border-width: 0 1px 0 1px;
+    border-style: solid;
+}
+
+.nav-link {
+    border-radius: 0;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) { 
+    .alert {
+        height: 6vh;
+    }
+    .card-body {
+        padding: 0;
+    }
+    .link {
+        font-size: large;
+    }
+}
+

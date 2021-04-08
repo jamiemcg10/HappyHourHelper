@@ -1,0 +1,32 @@
+<div 
+    *ngFor="let ingredient of ingredientList"
+    class="collabsibleBox"
+>
+    <div class=alert>
+        <div 
+            (click)="collapse.toggle()" 
+            [attr.aria-expanded]="!ingredients[ingredient].isCollapsed"
+            class="ingredient"
+        >
+            <svg height="15" width="15" class="open-icon">
+                <polygon points="0,0, 15,7.5, 0,15" /> 
+            </svg>
+            {{ ingredient | titlecase }}
+        </div>
+    </div>
+    <div #collapse="ngbCollapse" [(ngbCollapse)]="ingredients[ingredient].isCollapsed">
+        <div class="card">
+        <div class="card-body">
+                <ul *ngIf="ingredients[ingredient].drinks">
+                    <li 
+                        *ngFor="let drink of ingredients[ingredient].drinks"
+                        class="link"
+                        (click)=getRecipe(drink.idDrink)
+                    >
+                        {{ drink.strDrink || titlecase }}
+                    </li>
+                </ul>
+        </div>
+        </div>
+    </div>
+</div>

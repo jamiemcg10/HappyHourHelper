@@ -1,0 +1,12 @@
+@import '../../../variables.scss';
+
+div {
+    background-color: $hhh-dark-green;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 4px;
+    height: 35px;
+}

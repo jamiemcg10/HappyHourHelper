@@ -1,0 +1,23 @@
+@import '../../../variables.scss';
+
+.letter {
+    font-weight: bold;
+    font-size: x-large;
+    color: $hhh-medium-green;
+}
+
+.open-icon {
+    fill: $hhh-medium-green;
+}
+
+[aria-expanded="true"] {
+    .open-icon {
+        transform: rotate(90deg);
+    }
+}
+
+@media screen and (max-width: 800px) { 
+    .letter {
+        font-size: large;
+    }
+}
