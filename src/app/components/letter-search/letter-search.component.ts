@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CocktailService } from '../../services/cocktail.service'
-import { Drink, DrinkList } from '../../types/types'
+import { DataCacheService } from '../../services/data-cache.service'
+import { EventService } from '../../services/event.service'
+import { DrinkList } from '../../types/types'
 
 @Component({
   selector: 'app-letter-search',
@@ -11,12 +13,16 @@ export class LetterSearchComponent implements OnInit {
 
   @Output() displayRecipe: EventEmitter<any> = new EventEmitter()
 
-  constructor(private cocktailService: CocktailService) { }
+  constructor(
+    private cocktailService: CocktailService, 
+    private dataCacheService: DataCacheService,
+    private eventService: EventService
+  ) { }
 
   ngOnInit(): void {
-    if (Object.keys(this.cocktailService.letters).length > 0){
+    if (Object.keys(this.dataCacheService.letters).length > 0){
       // drinks are in service - get them from there
-      this.letters = this.cocktailService.letters
+      this.letters = this.dataCacheService.letters
     } else {
       // get the drinks from the api
       Object.keys(this.letters).forEach((key: string)=>{
@@ -26,17 +32,9 @@ export class LetterSearchComponent implements OnInit {
           })
       })
 
-      this.cocktailService.letters = this.letters
+      this.dataCacheService.letters = this.letters
     }
   }
-
-    // this should be refactored - also in search-page and ingredient-search
-    getRecipe(recipeId: string) : void {
-      this.cocktailService.getCocktailById(recipeId)
-        .subscribe((data: Drink)=>{
-          this.displayRecipe.emit(data)
-        })
-    }
 
   letters = {
       a: { isCollapsed: true },

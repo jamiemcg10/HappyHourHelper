@@ -23,7 +23,7 @@
             <li 
                 *ngFor="let result of searchResults"
                 class="link"
-                (click)="getRecipe(result.idDrink)"
+                (click)="eventService.getRecipe(result.idDrink)"
             >
                     {{ result.strDrink }}
             </li>

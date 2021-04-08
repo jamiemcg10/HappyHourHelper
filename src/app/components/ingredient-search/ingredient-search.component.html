@@ -21,7 +21,7 @@
                     <li 
                         *ngFor="let drink of ingredients[ingredient].drinks"
                         class="link"
-                        (click)=getRecipe(drink.idDrink)
+                        (click)=eventService.getRecipe(drink.idDrink)
                     >
                         {{ drink.strDrink || titlecase }}
                     </li>

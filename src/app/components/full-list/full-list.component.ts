@@ -32,8 +32,4 @@ export class FullListComponent implements OnInit {
     this.activeTab[this.selectedComponent] = 1
   }
 
-  transferEvent(event: any){
-    this.displayRecipe.emit(event)
-  }
-
 }

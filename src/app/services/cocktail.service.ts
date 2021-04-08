@@ -9,10 +9,6 @@ export class CocktailService {
 
   constructor(private http: HttpClient) { }
 
-  ingredients: any = {}
-  letters: any = {}
-  prevSearches = {}
-
   getRandomRecipe() : Observable<any>{  
     // get random recipe for surprise me tab
     return this.http.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')

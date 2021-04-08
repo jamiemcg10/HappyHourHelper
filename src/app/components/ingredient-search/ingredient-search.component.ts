@@ -1,6 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core'
 import { CocktailService } from '../../services/cocktail.service'
-import { Drink, DrinkList } from '../../types/types'
+import { DataCacheService } from '../../services/data-cache.service'
+import { EventService } from '../../services/event.service'
+import { DrinkList } from '../../types/types'
 
 @Component({
   selector: 'app-ingredient-search',
@@ -12,12 +14,16 @@ export class IngredientSearchComponent implements OnInit {
   // to send event to display a specific recipe
   @Output() displayRecipe: EventEmitter<any> = new EventEmitter()
 
-  constructor(private cocktailService: CocktailService) { }
+  constructor(
+    private cocktailService: CocktailService, 
+    private dataCacheService: DataCacheService,
+    private eventService: EventService
+  ) { }
 
   ngOnInit(): void {
-    if (Object.keys(this.cocktailService.ingredients).length > 0){
+    if (Object.keys(this.dataCacheService.ingredients).length > 0){
       // drinks have already been fetched - get them from the service
-      this.ingredients = this.cocktailService.ingredients
+      this.ingredients = this.dataCacheService.ingredients
     } else {
       // make an api call to ge the drinks     
       Object.keys(this.ingredients).forEach((key: string)=>{
@@ -28,17 +34,9 @@ export class IngredientSearchComponent implements OnInit {
           })
       })
 
-      this.cocktailService.ingredients = this.ingredients  // add the drinks to the service
+      this.dataCacheService.ingredients = this.ingredients  // add the drinks to the service
     }
 
-  }
-
-  // this should be refactored - also in search-page and letter-search
-  getRecipe(recipeId: string) : void {
-    this.cocktailService.getCocktailById(recipeId)
-      .subscribe((data: Drink)=>{
-        this.displayRecipe.emit(data)
-      })
   }
   
   // object to hold ingredients in list

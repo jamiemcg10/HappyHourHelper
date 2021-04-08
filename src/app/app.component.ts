@@ -2,6 +2,7 @@ import { Component } from '@angular/core'
 import { Title } from '@angular/platform-browser'
 import { MainComponent } from './types/types'
 import { CocktailService } from './services/cocktail.service'
+import { EventService } from './services/event.service'
 import { Drink, DrinkList } from './types/types'
 
 @Component({
@@ -11,11 +12,18 @@ import { Drink, DrinkList } from './types/types'
 })
 export class AppComponent {
 
-  constructor(private cocktailService: CocktailService, private titleService: Title){ }
+  constructor(
+    private titleService: Title,
+    private cocktailService: CocktailService, 
+    private eventService: EventService
+  ){ }
 
   ngOnInit(): void {
     this.titleService.setTitle('Happy Hour Helper')
     this.selectedComponent = MainComponent.List
+    this.eventService.DisplayRecipeEvent.subscribe((data: DrinkList)=>{
+      this.displayRecipe(data)
+    })
   }
 
   title = 'Happy Hour Helper';
@@ -44,7 +52,7 @@ export class AppComponent {
       })
   }
 
-  displayRecipe(event: {drinks: Drink[]}) : void {
+  displayRecipe(event: any) : void {  // change from any later
     // display a specif recipe sent from a child component
     this.activeTab[this.selectedComponent] = 0
     this.selectedRecipe = event.drinks[0]
