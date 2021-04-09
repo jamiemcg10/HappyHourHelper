@@ -53,7 +53,7 @@ export class AppComponent {
   }
 
   displayRecipe(event: any) : void {  // change from any later
-    // display a specif recipe sent from a child component
+    // display a specific recipe sent from a child component
     this.activeTab[this.selectedComponent] = 0
     this.selectedRecipe = event.drinks[0]
     this.selectedComponent = MainComponent.Recipe

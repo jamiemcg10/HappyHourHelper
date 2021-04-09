@@ -60,13 +60,4 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 800px) { 
-    .alert {
-        height: 6vh; // redundant
-    }
-
-    .link {
-        font-size: medium; // redundant
-    }
-}
 

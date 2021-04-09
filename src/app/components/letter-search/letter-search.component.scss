@@ -1,6 +1,10 @@
 @import '../../../variables.scss';
 
-
+[aria-expanded="true"] {
+    .open-icon {
+        transform: translateY(5px) rotate(90deg);
+    }
+}
 
 .letter {
     font-weight: bold;
@@ -12,8 +16,6 @@
     fill: $hhh-medium-green;
 }
 
-[aria-expanded="true"] {
-    .open-icon {
-        transform: rotate(90deg);
-    }
+svg {
+    margin-right: 5px;
 }

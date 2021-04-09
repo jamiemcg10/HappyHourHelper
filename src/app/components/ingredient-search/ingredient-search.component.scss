@@ -1,5 +1,11 @@
 @import '../../../variables.scss';
 
+[aria-expanded="true"] {
+    .open-icon {
+        transform: translateY(5px) rotate(90deg);
+    }
+}
+
 .ingredient {
     font-weight: bold;
     font-size: large;
@@ -10,14 +16,7 @@
     fill: $hhh-medium-green;
 }
 
-[aria-expanded="true"] {
-    .open-icon {
-        transform: rotate(90deg);
-    }
+svg {
+    margin-right: 5px;
 }
 
-@media screen and (max-width: 800px) { 
-    .ingredient {
-        font-size: large; // redundant
-    }
-}
