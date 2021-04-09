@@ -7,13 +7,23 @@
 
 .alert {
     cursor: pointer;
+    height: 6vh;
 }
 .card {
     border-top: none;
 }
 
+.card-body {
+    padding: 0;
+}
+
+.collapse-header {
+    display: inline;
+    vertical-align: middle;
+}
+
 .collabsibleBox:nth-child(1) {
-    margin-top: 45px;
+    margin-top: 40px;
 }
 
 .collabsibleBox {
@@ -23,7 +33,7 @@
     color: green;
     text-decoration: underline;
     list-style: none;
-    font-size: x-large;
+    font-size: medium;
     width: fit-content;
 
     &:hover {
@@ -52,13 +62,11 @@
 
 @media screen and (max-width: 800px) { 
     .alert {
-        height: 6vh;
+        height: 6vh; // redundant
     }
-    .card-body {
-        padding: 0;
-    }
+
     .link {
-        font-size: large;
+        font-size: medium; // redundant
     }
 }
 

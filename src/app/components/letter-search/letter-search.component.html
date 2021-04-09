@@ -9,9 +9,9 @@
             class="letter"
         >
             <svg height="15" width="15" class="open-icon">
-                <polygon points="0,0, 15,7.5, 0,15" /> 
+                <polygon points="0,0, 8,7.5, 0,15" /> 
             </svg>
-            {{ letter | uppercase }}
+            <p class="collapse-header">{{ letter | uppercase }}</p>
         </div>
     </div>
     <div #collapse="ngbCollapse" [(ngbCollapse)]="letters[letter].isCollapsed">

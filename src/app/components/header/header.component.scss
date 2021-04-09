@@ -3,8 +3,8 @@
 div {
     background-color: $hhh-dark-green;
     color: white;
-    padding: 30px;
-    height: 100px;
+    padding: 5px;
+    height: 65px;
 }
 
 h1 {
@@ -14,7 +14,7 @@ h1 {
 
 @media screen and (max-width: 800px) {
     div {
-        padding: 20px;
+        padding: 10px;
     }
 
     h1 {

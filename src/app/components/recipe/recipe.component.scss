@@ -1,29 +1,24 @@
 
 .container {
-    padding: 40px 0px;
+    padding: 25px 0px;
 }
 
 img {
-    width: 250px;
+    width: 200px;
     margin: 20px 0px 50px 0px;
 }
 
 #instructions {
-    margin-top: 45px;
+    margin-top: 25px;
 
     & ~ p {
-        width: 66%;
-        font-size: x-large;
+        width: 75%;
     }
 }
 
-li {
-    font-size: x-large;
-}
 
 @media screen and (max-width: 800px) {
-    h1 {
-        font-size: 2.25rem;
+    h3 {
         text-align: center;
     }
 
@@ -46,7 +41,7 @@ li {
         }
     }
 
-    h4, ul, p {
+    h6, ul, p {
         margin-left: 20px;
     }
 }

@@ -11,9 +11,9 @@ input {
 }
 
 #recent-searches {
-    font-size: x-large;
+    font-size: large;
     font-weight: bold;
-    margin-top: 100px;
+    margin-top: 75px;
     
     :not(&){
         font-weight: initial;

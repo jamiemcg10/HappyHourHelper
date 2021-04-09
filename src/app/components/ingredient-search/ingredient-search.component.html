@@ -9,9 +9,9 @@
             class="ingredient"
         >
             <svg height="15" width="15" class="open-icon">
-                <polygon points="0,0, 15,7.5, 0,15" /> 
+                <polygon points="0,0, 8,7.5, 0,15" /> 
             </svg>
-            {{ ingredient | titlecase }}
+            <p class="collapse-header">{{ ingredient | titlecase }}</p>
         </div>
     </div>
     <div #collapse="ngbCollapse" [(ngbCollapse)]="ingredients[ingredient].isCollapsed">
