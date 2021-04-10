@@ -17,7 +17,7 @@
     <div #collapse="ngbCollapse" [(ngbCollapse)]="ingredients[ingredient].isCollapsed">
         <div class="card">
         <div class="card-body">
-                <ul *ngIf="ingredients[ingredient].drinks">
+                <ul *ngIf="ingredients[ingredient].drinks; else notFound">
                     <li 
                         *ngFor="let drink of ingredients[ingredient].drinks"
                         class="link"
@@ -26,6 +26,9 @@
                         {{ drink.strDrink || titlecase }}
                     </li>
                 </ul>
+                <ng-template #notFound>
+                    <p class="not-found">No drinks found</p>
+                </ng-template>
         </div>
         </div>
     </div>

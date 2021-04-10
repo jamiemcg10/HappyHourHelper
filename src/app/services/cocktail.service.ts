@@ -11,7 +11,7 @@ export class CocktailService {
 
   getRandomRecipe() : Observable<any>{  
     // get random recipe for surprise me tab
-    return this.http.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+    return this.http.get('https://www.thecocktaildb.com/api/json/v1/1/random.php?a=Alcoholic')
   }
  
   searchByIngredient(ingredient: string) : Observable<any> { 
@@ -21,7 +21,7 @@ export class CocktailService {
 
   getFullListByLetter(letter: string) : Observable<any> {
     // get all drinks starting with a specified letter
-    return this.http.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`)
+    return this.http.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}&a=Alcoholic`)
   }
 
   getCocktailByName(cocktailName: string) : Observable<any> {
