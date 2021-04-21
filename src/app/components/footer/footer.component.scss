@@ -11,3 +11,12 @@ div {
     height: 25px;
     font-size: small;
 }
+
+
+// to hide footer when input is in focus
+@media screen and (max-height: 320px) {
+    #footer {
+        display: none;
+    }
+}
+
