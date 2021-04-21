@@ -31,6 +31,13 @@
     </div>
 
     <div 
+        *ngIf="!searchResults && !freshPage"
+        id="empty-results"    
+    >
+            No results found
+    </div>
+
+    <div 
         *ngIf="numSearches > 0" 
         id="recent-searches"
     >

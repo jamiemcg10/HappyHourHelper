@@ -44,3 +44,11 @@ ul {
         font-size: large;
     }
 }
+
+// to let header scroll when input is in focus
+@media screen and (max-height: 320px) {
+    .header {
+        position: inherit;
+    }
+}
+

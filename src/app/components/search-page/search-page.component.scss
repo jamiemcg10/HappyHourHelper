@@ -2,6 +2,11 @@
 button {
     margin-left: 10px;
 }
+
+#empty-results {
+    font-style: italic;
+}
+
 input {
     height: auto;
 }
@@ -26,8 +31,14 @@ input {
 }
 
 @media screen and (max-width: 800px) {
-
     input::placeholder{
         font-size: 0.73rem;
+    }
+}
+
+// to reset search box when input is in focus
+@media screen and (max-height: 320px) {
+    .input-group {
+        margin: initial;
     }
 }

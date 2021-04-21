@@ -29,8 +29,13 @@ export class SearchPageComponent implements OnInit {
   searchResults: Drink[]
   numSearches: number
   prevSearches : any
+  freshPage = true
 
   performSearch() : void {
+    if (!this.searchTerm){
+      return;
+    }
+    this.freshPage = false
     if (this.dataCacheService.prevSearches[this.searchTerm]){  // search has been done before
       this.searchResults = this.dataCacheService.prevSearches[this.searchTerm]
       this.numSearches++
