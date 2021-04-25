@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="recipeExists; else elseblock">
     <h3>{{ recipe.strDrink }}</h3>
     <img [src]="recipe.strDrinkThumb">
 
@@ -26,3 +26,9 @@
     <p>{{ recipe.strInstructions }}</p>
 
 </div>
+
+<ng-template #elseblock>
+    <div class="container">
+        <p id="sorry">Sorry, the recipe you're looking for does not exist.</p>
+    </div>
+</ng-template>

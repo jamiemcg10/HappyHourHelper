@@ -4,13 +4,6 @@ export enum ListType {
 
 }
 
-export enum MainComponent {
-    List,
-    Search,
-    Surprise,
-    Recipe
-}
-
 export interface Drink {
     idDrink: string,
     strAlcoholic: string,

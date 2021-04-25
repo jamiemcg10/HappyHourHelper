@@ -1,7 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CocktailService } from '../../services/cocktail.service'
 import { DataCacheService } from '../../services/data-cache.service'
-import { EventService } from '../../services/event.service'
 import { Drink, DrinkList } from '../../types/types'
 
 @Component({
@@ -12,18 +11,22 @@ import { Drink, DrinkList } from '../../types/types'
 
 export class SearchPageComponent implements OnInit {
 
-  @Output() displayRecipe: EventEmitter<any> = new EventEmitter()
+  @ViewChild('searchbar') input: ElementRef;
 
   constructor(
     private cocktailService: CocktailService, 
     private dataCacheService: DataCacheService,
-    private eventService: EventService
   ) { }
 
   ngOnInit(): void {
     this.prevSearches = this.dataCacheService.prevSearches || {}  // if there have been searches, get them from the service
     this.numSearches = Object.keys(this.prevSearches).length
   }
+
+  ngAfterViewInit() {
+    this.input.nativeElement.blur();
+    this.input.nativeElement.focus();
+ }
 
   searchTerm: ''
   searchResults: Drink[]

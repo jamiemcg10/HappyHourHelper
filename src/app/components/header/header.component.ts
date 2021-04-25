@@ -12,4 +12,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  activeTab = [1,0,0,0]  // keep track of active tab for highlighting
+
 }

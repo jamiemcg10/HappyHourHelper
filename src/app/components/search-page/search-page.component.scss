@@ -3,6 +3,12 @@ button {
     margin-left: 10px;
 }
 
+.container {
+    position: absolute;
+    margin-top: 125px;
+    padding-bottom: 30px;
+}
+
 #empty-results {
     font-style: italic;
 }
@@ -38,7 +44,11 @@ input {
 
 // to reset search box when input is in focus
 @media screen and (max-height: 320px) {
+    .container {
+        margin-top: 65px;
+    }
     .input-group {
         margin: initial;
+        margin-bottom: 15px;
     }
 }

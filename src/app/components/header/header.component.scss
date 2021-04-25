@@ -1,5 +1,10 @@
 @import '../../../variables';
 
+.active {
+    background-color: $hhh-medium-green;
+    color: white;
+}
+
 div {
     background-color: $hhh-dark-green;
     color: white;
@@ -12,6 +17,33 @@ h1 {
     text-align: center;
 }
 
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+}
+
+.nav {
+    height: 40px;
+}
+
+.nav-link {
+    font-weight: bold;
+    font-size: large;
+}
+
+#surprise-tab {
+    transition: background-color .1s ease-in-out;
+  }
+  
+#surprise-tab:active { // make tab flash when clicked 
+    background-color: $hhh-medium-green;
+}
+
+ul {
+    border-bottom: 1px solid lightgray;
+}
+
 @media screen and (max-width: 800px) {
     div {
         padding: 10px;
@@ -19,5 +51,17 @@ h1 {
 
     h1 {
         font-size: 2.05rem;
+    }
+
+    .nav-link {
+        font-size: large;
+    }
+}
+
+
+// to let header scroll when input is in focus
+@media screen and (max-height: 320px) {
+    .header {
+        position: inherit;
     }
 }

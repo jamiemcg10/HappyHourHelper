@@ -2,34 +2,19 @@
 <div class="header">
   <app-header></app-header>
   <ul class="nav nav-pills nav-fill">
-    <li class="nav-item" [class.active]="activeTab[0]" >
-      <a class="nav-link" (click)="switchComponent(MainComponent.List)">Full List</a>
+    <li class="nav-item" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" >
+      <p class="nav-link" routerLink="/">Full List</p>
     </li>
-    <li class="nav-item" [class.active]="activeTab[1]" >
-      <a class="nav-link" (click)="switchComponent(MainComponent.Search)">Search</a>
+    <li class="nav-item" routerLinkActive="active" >
+      <p class="nav-link" routerLink="/search">Search</p>
     </li>
-    <li class="nav-item" [class.active]="activeTab[2]" id="surprise-tab">
-      <a class="nav-link" (click)="getRandomRecipe()">Surprise Me</a>
+    <li class="nav-item" id="surprise-tab">
+      <p class="nav-link" (click)="getRandomRecipe()">Surprise Me</p>
     </li>
   </ul>
 </div>
 
-<div 
-  [ngSwitch]="selectedComponent"
-  class="loaded-component"
->
-  <app-search-page 
-    *ngSwitchCase="MainComponent.Search"
-    (displayRecipe)="displayRecipe($event)"
-  ></app-search-page>
-  <app-full-list 
-    *ngSwitchCase="MainComponent.List"
-    (displayRecipe)="displayRecipe($event)"
-  ></app-full-list>
-  <app-recipe 
-    *ngSwitchCase="MainComponent.Recipe"
-    [recipe]=selectedRecipe
-  ></app-recipe>
-</div>
+
+<router-outlet></router-outlet>
 
 <app-footer></app-footer>

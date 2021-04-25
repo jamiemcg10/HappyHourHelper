@@ -10,5 +10,6 @@ export class DataCacheService {
   ingredients: any = {}
   letters: any = {}
   prevSearches = {}
+  recipes = {}
 
 }

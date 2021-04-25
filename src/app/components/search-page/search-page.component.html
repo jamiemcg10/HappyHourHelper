@@ -8,11 +8,11 @@
             </span>
           </div>
         <input 
+            #searchbar
             [(ngModel)]="searchTerm" 
             type="text" 
             class="form-control"
-            placeholder="Search for a drink or liqour"  
-            autofocus  
+            placeholder="Search for a drink or liqour" 
             (keydown.enter)="performSearch()"
         >
         <button class="btn btn-success" (click)="performSearch()">Search</button>
@@ -23,7 +23,7 @@
             <li 
                 *ngFor="let result of searchResults"
                 class="link"
-                (click)="eventService.getRecipe(result.idDrink)"
+                routerLink="/recipe/{{ result.idDrink }}"
             >
                     {{ result.strDrink }}
             </li>

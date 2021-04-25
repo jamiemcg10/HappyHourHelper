@@ -1,7 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CocktailService } from '../../services/cocktail.service'
 import { DataCacheService } from '../../services/data-cache.service'
-import { EventService } from '../../services/event.service'
 import { DrinkList } from '../../types/types'
 
 @Component({
@@ -11,12 +10,9 @@ import { DrinkList } from '../../types/types'
 })
 export class LetterSearchComponent implements OnInit {
 
-  @Output() displayRecipe: EventEmitter<any> = new EventEmitter()
-
   constructor(
     private cocktailService: CocktailService, 
-    private dataCacheService: DataCacheService,
-    private eventService: EventService
+    private dataCacheService: DataCacheService
   ) { }
 
   ngOnInit(): void {

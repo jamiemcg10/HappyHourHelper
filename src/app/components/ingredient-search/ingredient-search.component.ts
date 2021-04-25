@@ -1,7 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { CocktailService } from '../../services/cocktail.service'
 import { DataCacheService } from '../../services/data-cache.service'
-import { EventService } from '../../services/event.service'
 import { DrinkList } from '../../types/types'
 
 @Component({
@@ -11,13 +10,10 @@ import { DrinkList } from '../../types/types'
 })
 export class IngredientSearchComponent implements OnInit {
 
-  // to send event to display a specific recipe
-  @Output() displayRecipe: EventEmitter<any> = new EventEmitter()
 
   constructor(
     private cocktailService: CocktailService, 
-    private dataCacheService: DataCacheService,
-    private eventService: EventService
+    private dataCacheService: DataCacheService
   ) { }
 
   ngOnInit(): void {
@@ -25,7 +21,7 @@ export class IngredientSearchComponent implements OnInit {
       // drinks have already been fetched - get them from the service
       this.ingredients = this.dataCacheService.ingredients
     } else {
-      // make an api call to ge the drinks     
+      // make an api call to get the drinks     
       Object.keys(this.ingredients).forEach((key: string)=>{
         this.cocktailService.searchByIngredient(key)
           .subscribe((data: DrinkList) => {

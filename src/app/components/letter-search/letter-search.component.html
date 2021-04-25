@@ -21,7 +21,7 @@
                     <li 
                         *ngFor="let drink of letters[letter].drinks"
                         class="link"
-                        (click)=eventService.getRecipe(drink.idDrink)
+                        routerLink="/recipe/{{ drink.idDrink }}"
                     >
                         {{ drink.strDrink | titlecase }}
                     </li>

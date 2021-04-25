@@ -4,11 +4,11 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
-
 .alert {
     cursor: pointer;
     height: 6vh;
 }
+
 .card {
     border-top: none;
 }
@@ -23,11 +23,16 @@
 }
 
 .collabsibleBox:nth-child(1) {
-    margin-top: 40px;
+    margin-top: 145px;
+}
+
+.collabsibleBox:last-child {
+    margin-bottom: 25px;
 }
 
 .collabsibleBox {
     border: 1px solid rgba(0, 0, 0, 0.125);
+    border-right: none;
 }
 .link {
     color: green;
